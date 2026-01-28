@@ -1,0 +1,174 @@
+++++ FCFS EXECUTION LOG ++++
+
+--- Execution Log ---
+t=0: P1 starts running
+t=8: P1 completes
+t=8: P2 starts running
+t=12: P2 completes
+t=12: P3 starts running
+t=21: P3 completes
+t=21: P4 starts running
+t=26: P4 completes
+
+--- Gantt Timeline ---
+(0, 8, 'P1')
+(8, 12, 'P2')
+(12, 21, 'P3')
+(21, 26, 'P4')
+
+--- Averages ---
+Average Turnaround Time: 15.25
+Average Waiting Time:    8.75
+Average Response Time:   8.75
+
+--- Context Switches ---
+3
+
+++++ SJF EXECUTION LOG ++++ 
+--- Execution Log ---
+t=0: P1 starts running
+t=8: P1 completes
+t=8: P2 starts running
+t=12: P2 completes
+t=12: P4 starts running
+t=17: P4 completes
+t=17: P3 starts running
+t=26: P3 completes
+
+--- Gantt Timeline ---
+(0, 8, 'P1')
+(8, 12, 'P2')
+(12, 17, 'P4')
+(17, 26, 'P3')
+
+--- Averages ---
+Average Turnaround Time: 14.25
+Average Waiting Time:    7.75
+Average Response Time:   7.75
+
+--- Context Switches ---
+3
+
+++++ SRTF EXECUTION LOG ++++
+--- Execution Log ---
+t=0: P1 arrives
+t=0: P1 starts running
+t=1: P2 arrives
+t=1: P2 preempts P1
+t=1: P2 starts running
+t=2: P3 arrives
+t=3: P4 arrives
+t=5: P2 completes
+t=5: P4 starts running
+t=10: P4 completes
+t=17: P1 completes
+t=17: P3 starts running
+t=26: P3 completes
+
+--- Gantt Timeline ---
+(0, 1, 'P1')
+(1, 5, 'P2')
+(5, 10, 'P4')
+(10, 17, 'P1')
+(17, 26, 'P3')
+
+--- Averages ---
+Average Turnaround Time: 13.00
+Average Waiting Time:    6.50
+Average Response Time:   4.25
+
+--- Context Switches ---
+1
+
+++++ RR EXECUTION LOG ++++
+--- Execution Log ---
+t=0: P1 arrives
+t=0: P1 starts running
+t=1: P2 arrives
+t=2: P3 arrives
+t=3: P4 arrives
+t=4: quantum expired for P1
+t=4: P2 starts running
+t=8: P2 completes
+t=8: P3 starts running
+t=12: quantum expired for P3
+t=12: P4 starts running
+t=16: quantum expired for P4
+t=16: P1 starts running
+t=20: P1 completes
+t=20: P3 starts running
+t=24: quantum expired for P3
+t=24: P4 starts running
+t=25: P4 completes
+t=25: P3 starts running
+t=26: P3 completes
+
+--- Gantt Timeline ---
+(0, 4, 'P1')
+(4, 8, 'P2')
+(8, 12, 'P3')
+(12, 16, 'P4')
+(16, 20, 'P1')
+(20, 24, 'P3')
+(24, 25, 'P4')
+(25, 26, 'P3')
+
+--- Averages ---
+Average Turnaround Time: 18.25
+Average Waiting Time:    11.75
+Average Response Time:   4.50
+
+--- Context Switches ---
+4
+
+++++ PRIO_NP EXECUTION LOG ++++
+--- Execution Log ---
+t=0: P1 starts running
+t=8: P1 completes
+t=8: P2 starts running
+t=12: P2 completes
+t=12: P4 starts running
+t=17: P4 completes
+t=17: P3 starts running
+t=26: P3 completes
+
+--- Gantt Timeline ---
+(0, 8, 'P1')
+(8, 12, 'P2')
+(12, 17, 'P4')
+(17, 26, 'P3')
+
+--- Averages ---
+Average Turnaround Time: 14.25
+Average Waiting Time:    7.75
+Average Response Time:   7.75
+
+--- Context Switches ---
+3
+
+++++ PRIO_P EXECUTION LOG ++++
+--- Execution Log ---
+t=0: P1 starts running
+t=1: P2 preempts P1
+t=1: P2 starts running
+t=5: P2 completes
+t=12: P1 completes
+t=12: P4 starts running
+t=17: P4 completes
+t=17: P3 starts running
+t=26: P3 completes
+
+--- Gantt Timeline ---
+(0, 1, 'P1')
+(1, 5, 'P2')
+(5, 12, 'P1')
+(12, 17, 'P4')
+(17, 26, 'P3')
+
+--- Averages ---
+Average Turnaround Time: 13.50
+Average Waiting Time:    7.00
+Average Response Time:   6.00
+
+--- Context Switches ---
+4
